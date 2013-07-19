@@ -474,8 +474,9 @@ angular.module('ngResource', ['ng']).
 
             if (data) {
               if ( angular.isArray(data) != !!action.isArray ) {
-                return $q.reject("Error in resource configuration. Expected response to contain an " +
-                  (action.isArray?'array':'object') + " but got an " + (angular.isArray(data)?'array':'object'));
+                throw ngResourceMinErr('nocfg', 'Error in resource configuration. Expected response' +
+                  ' to contain an {0} but got an {1}', 
+                  action.isArray?'array':'object', angular.isArray(data)?'array':'object');
               }
               if (action.isArray) {
                 value.length = 0;

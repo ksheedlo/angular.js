@@ -815,7 +815,7 @@ describe("resource", function() {
     $httpBackend.flush();
     expect(successHandler).not.toHaveBeenCalled();
     expect(failureHandler).toHaveBeenCalledWith(
-      'Error in resource configuration. Expected response to contain an array but got an object');
+      '[ngResource:nocfg] Error in resource configuration. Expected response to contain an array but got an object');
   });
 
   it('should fail if action expects an array but response is an object', function() {
@@ -826,7 +826,7 @@ describe("resource", function() {
     $httpBackend.flush();
     expect(successHandler).not.toHaveBeenCalled();
     expect(failureHandler).toHaveBeenCalledWith(
-      'Error in resource configuration. Expected response to contain an object but got an array');
+      '[ngResource:nocfg] Error in resource configuration. Expected response to contain an object but got an array');
   });
 
   it('should transform request/response', function() {
